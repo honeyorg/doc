@@ -1,0 +1,232 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.10.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="Doxygen Awesome" />
+    <meta property="og:image"
+        content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+    <meta property="og:description"
+        content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+    <meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta name="twitter:image:src"
+        content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta name="twitter:description"
+        content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+    <!-- END twitter metadata -->
+    <title>Honey: include/logger/log_printer.h Source File</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+    <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+    <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+    <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+    <script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+    <script type="text/javascript" src="toggle-alternative-theme.js"></script>
+    <script type="text/javascript">
+        DoxygenAwesomeFragmentCopyButton.init()
+        DoxygenAwesomeDarkModeToggle.init()
+        DoxygenAwesomeParagraphLink.init()
+        DoxygenAwesomeInteractiveToc.init()
+        DoxygenAwesomeTabs.init()
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <!-- https://tholman.com/github-corners/ -->
+    <!-- <a href="https://github.com/jothepro/doxygen-awesome-css" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style> -->
+    <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+        <div id="titlearea">
+            <table cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr style="height: 56px;">
+                        <td id="projectlogo"><img alt="Logo" src="logo.drawio.svg" /></td>
+                        <td id="projectalign" style="padding-left: 0.5em;">
+                            <div id="projectname">Honey
+                                &#160;<span
+                                    id="projectnumber">v0.1.0</span>
+                            </div>
+                            <div id="projectbrief">Easy UI Framework.</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- end header part --><!-- Generated by Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('log__printer_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">log_printer.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="log__printer_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;atomic&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;condition_variable&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="log__verbosity_8h.html">log_verbosity.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacehoney.html">honey</a> {</div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html">   14</a></span><span class="keyword">class </span>LOGGER_API <a class="code hl_class" href="classhoney_1_1_log_printer.html">LogPrinter</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html#a65e3234f7a68cc588dd4c3b0ae80b367">   16</a></span>  <a class="code hl_function" href="classhoney_1_1_log_printer.html#a65e3234f7a68cc588dd4c3b0ae80b367">LogPrinter</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; filename, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; filepath);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html#a018a1a746f3d05d2bc1ffd98f787204e">   17</a></span>  <a class="code hl_function" href="classhoney_1_1_log_printer.html#a018a1a746f3d05d2bc1ffd98f787204e">~LogPrinter</a>();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html#a0d4681a69ac1430ccb8e1e0bb32a9e8f">   19</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classhoney_1_1_log_printer.html#a0d4681a69ac1430ccb8e1e0bb32a9e8f">SetGlobalVerbosity</a>(<a class="code hl_enumeration" href="namespacehoney.html#a131b6485330f00281563807ff1f175ae">LogVerbosity</a> verbosity);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html#ae4aef78c2d7f11fc2ac52a7405db30fa">   20</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classhoney_1_1_log_printer.html#ae4aef78c2d7f11fc2ac52a7405db30fa">SetModuleVerbosity</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; module_name, <a class="code hl_enumeration" href="namespacehoney.html#a131b6485330f00281563807ff1f175ae">LogVerbosity</a> verbosity);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html#a1f64403dd91f87662b74348b2a9f2979">   21</a></span>  <a class="code hl_enumeration" href="namespacehoney.html#a131b6485330f00281563807ff1f175ae">LogVerbosity</a> <a class="code hl_function" href="classhoney_1_1_log_printer.html#a1f64403dd91f87662b74348b2a9f2979">GetModuleVerbosity</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; module_name);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html#afdcf82bbc45a3ead04fc93c1898e3009">   22</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classhoney_1_1_log_printer.html#afdcf82bbc45a3ead04fc93c1898e3009">HasModule</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; module_name);</div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structhoney_1_1_log_printer_1_1_to_print_log.html">   23</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structhoney_1_1_log_printer_1_1_to_print_log.html">ToPrintLog</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structhoney_1_1_log_printer_1_1_to_print_log.html#a633d70e002c6385e647455fc3116298e">   24</a></span>    <span class="keywordtype">string</span> <a class="code hl_variable" href="structhoney_1_1_log_printer_1_1_to_print_log.html#a633d70e002c6385e647455fc3116298e">module_name</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structhoney_1_1_log_printer_1_1_to_print_log.html#af3c58f980c41652160e1032312024bd4">   25</a></span>    <span class="keywordtype">string</span> <a class="code hl_variable" href="structhoney_1_1_log_printer_1_1_to_print_log.html#af3c58f980c41652160e1032312024bd4">log</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structhoney_1_1_log_printer_1_1_to_print_log.html#a751e3c19589252e6153f801642d4b1ac">   26</a></span>    <a class="code hl_enumeration" href="namespacehoney.html#a131b6485330f00281563807ff1f175ae">LogVerbosity</a> <a class="code hl_variable" href="structhoney_1_1_log_printer_1_1_to_print_log.html#a751e3c19589252e6153f801642d4b1ac">verbosity</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  };</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html#a9b4ebb35610ddb105b5c8e8c6b46ca16">   28</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classhoney_1_1_log_printer.html#a9b4ebb35610ddb105b5c8e8c6b46ca16">AddLog</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; module_name, <a class="code hl_enumeration" href="namespacehoney.html#a131b6485330f00281563807ff1f175ae">LogVerbosity</a> verbosity,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>              <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; log);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html#aa11922761c3af5aafd7dff30ead702d8">   32</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classhoney_1_1_log_printer.html#aa11922761c3af5aafd7dff30ead702d8">Print</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html#aec9ca335adb126a26006940a07efe565">   33</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classhoney_1_1_log_printer.html#aec9ca335adb126a26006940a07efe565">ColorConsolePrint</a>(<a class="code hl_enumeration" href="namespacehoney.html#a131b6485330f00281563807ff1f175ae">LogVerbosity</a> verbosity, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; log);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html#afbcb78b3504987991b49921b9ff5bac2">   34</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classhoney_1_1_log_printer.html#afbcb78b3504987991b49921b9ff5bac2">PrintFromQueue</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html#a4f73cc319f15768ef196c124a2c94201">   35</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classhoney_1_1_log_printer.html#a4f73cc319f15768ef196c124a2c94201">BackupLogFile</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html#ae02945ccffb6e87b1cf28b4950b1490a">   37</a></span>  std::map&lt;string, LogVerbosity&gt; <a class="code hl_variable" href="classhoney_1_1_log_printer.html#ae02945ccffb6e87b1cf28b4950b1490a">modules_verbosity_</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html#a9490da30cf42d6640b20250ef11149fd">   38</a></span>  std::unique_ptr&lt;std::thread&gt; <a class="code hl_variable" href="classhoney_1_1_log_printer.html#a9490da30cf42d6640b20250ef11149fd">print_thread_</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html#a9ee2960df80dca506f34dbb8898eee16">   39</a></span>  std::queue&lt;ToPrintLog&gt; <a class="code hl_variable" href="classhoney_1_1_log_printer.html#a9ee2960df80dca506f34dbb8898eee16">to_print_logs_</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html#a8727e24387c468222f976c0b40a35162">   40</a></span>  std::mutex <a class="code hl_variable" href="classhoney_1_1_log_printer.html#a8727e24387c468222f976c0b40a35162">to_print_logs_mutex_</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html#a86ae87ada0d5a624e4ca34b44eeb52d8">   41</a></span>  std::condition_variable <a class="code hl_variable" href="classhoney_1_1_log_printer.html#a86ae87ada0d5a624e4ca34b44eeb52d8">to_print_log_cv_</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html#a91d1d455984f651fdbc1432bc99a69d4">   42</a></span>  <span class="keywordtype">string</span> <a class="code hl_variable" href="classhoney_1_1_log_printer.html#a91d1d455984f651fdbc1432bc99a69d4">filename_</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html#a8dde661ea84e0ceda0f4d14a0f1f29e3">   43</a></span>  <span class="keywordtype">string</span> <a class="code hl_variable" href="classhoney_1_1_log_printer.html#a8dde661ea84e0ceda0f4d14a0f1f29e3">filepath_</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html#a3ba24ab27cd3b1512f9c21970850a07f">   44</a></span>  <span class="keywordtype">string</span> <a class="code hl_variable" href="classhoney_1_1_log_printer.html#a3ba24ab27cd3b1512f9c21970850a07f">file_full_path_</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classhoney_1_1_log_printer.html#aa34bd52769fb25a1d58a408882f11dab">   45</a></span>  std::atomic&lt;bool&gt; <a class="code hl_variable" href="classhoney_1_1_log_printer.html#aa34bd52769fb25a1d58a408882f11dab">should_stop_print_thread_</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>};</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}  <span class="comment">// namespace honey</span></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html"><div class="ttname"><a href="classhoney_1_1_log_printer.html">honey::LogPrinter</a></div><div class="ttdef"><b>Definition</b> log_printer.h:14</div></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html_a018a1a746f3d05d2bc1ffd98f787204e"><div class="ttname"><a href="classhoney_1_1_log_printer.html#a018a1a746f3d05d2bc1ffd98f787204e">honey::LogPrinter::~LogPrinter</a></div><div class="ttdeci">~LogPrinter()</div></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html_a0d4681a69ac1430ccb8e1e0bb32a9e8f"><div class="ttname"><a href="classhoney_1_1_log_printer.html#a0d4681a69ac1430ccb8e1e0bb32a9e8f">honey::LogPrinter::SetGlobalVerbosity</a></div><div class="ttdeci">void SetGlobalVerbosity(LogVerbosity verbosity)</div></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html_a1f64403dd91f87662b74348b2a9f2979"><div class="ttname"><a href="classhoney_1_1_log_printer.html#a1f64403dd91f87662b74348b2a9f2979">honey::LogPrinter::GetModuleVerbosity</a></div><div class="ttdeci">LogVerbosity GetModuleVerbosity(const string &amp;module_name)</div></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html_a3ba24ab27cd3b1512f9c21970850a07f"><div class="ttname"><a href="classhoney_1_1_log_printer.html#a3ba24ab27cd3b1512f9c21970850a07f">honey::LogPrinter::file_full_path_</a></div><div class="ttdeci">string file_full_path_</div><div class="ttdef"><b>Definition</b> log_printer.h:44</div></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html_a4f73cc319f15768ef196c124a2c94201"><div class="ttname"><a href="classhoney_1_1_log_printer.html#a4f73cc319f15768ef196c124a2c94201">honey::LogPrinter::BackupLogFile</a></div><div class="ttdeci">void BackupLogFile()</div></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html_a65e3234f7a68cc588dd4c3b0ae80b367"><div class="ttname"><a href="classhoney_1_1_log_printer.html#a65e3234f7a68cc588dd4c3b0ae80b367">honey::LogPrinter::LogPrinter</a></div><div class="ttdeci">LogPrinter(const string &amp;filename, const string &amp;filepath)</div></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html_a86ae87ada0d5a624e4ca34b44eeb52d8"><div class="ttname"><a href="classhoney_1_1_log_printer.html#a86ae87ada0d5a624e4ca34b44eeb52d8">honey::LogPrinter::to_print_log_cv_</a></div><div class="ttdeci">std::condition_variable to_print_log_cv_</div><div class="ttdef"><b>Definition</b> log_printer.h:41</div></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html_a8727e24387c468222f976c0b40a35162"><div class="ttname"><a href="classhoney_1_1_log_printer.html#a8727e24387c468222f976c0b40a35162">honey::LogPrinter::to_print_logs_mutex_</a></div><div class="ttdeci">std::mutex to_print_logs_mutex_</div><div class="ttdef"><b>Definition</b> log_printer.h:40</div></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html_a8dde661ea84e0ceda0f4d14a0f1f29e3"><div class="ttname"><a href="classhoney_1_1_log_printer.html#a8dde661ea84e0ceda0f4d14a0f1f29e3">honey::LogPrinter::filepath_</a></div><div class="ttdeci">string filepath_</div><div class="ttdef"><b>Definition</b> log_printer.h:43</div></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html_a91d1d455984f651fdbc1432bc99a69d4"><div class="ttname"><a href="classhoney_1_1_log_printer.html#a91d1d455984f651fdbc1432bc99a69d4">honey::LogPrinter::filename_</a></div><div class="ttdeci">string filename_</div><div class="ttdef"><b>Definition</b> log_printer.h:42</div></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html_a9490da30cf42d6640b20250ef11149fd"><div class="ttname"><a href="classhoney_1_1_log_printer.html#a9490da30cf42d6640b20250ef11149fd">honey::LogPrinter::print_thread_</a></div><div class="ttdeci">std::unique_ptr&lt; std::thread &gt; print_thread_</div><div class="ttdef"><b>Definition</b> log_printer.h:38</div></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html_a9b4ebb35610ddb105b5c8e8c6b46ca16"><div class="ttname"><a href="classhoney_1_1_log_printer.html#a9b4ebb35610ddb105b5c8e8c6b46ca16">honey::LogPrinter::AddLog</a></div><div class="ttdeci">void AddLog(const string &amp;module_name, LogVerbosity verbosity, const string &amp;log)</div></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html_a9ee2960df80dca506f34dbb8898eee16"><div class="ttname"><a href="classhoney_1_1_log_printer.html#a9ee2960df80dca506f34dbb8898eee16">honey::LogPrinter::to_print_logs_</a></div><div class="ttdeci">std::queue&lt; ToPrintLog &gt; to_print_logs_</div><div class="ttdef"><b>Definition</b> log_printer.h:39</div></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html_aa11922761c3af5aafd7dff30ead702d8"><div class="ttname"><a href="classhoney_1_1_log_printer.html#aa11922761c3af5aafd7dff30ead702d8">honey::LogPrinter::Print</a></div><div class="ttdeci">void Print()</div></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html_aa34bd52769fb25a1d58a408882f11dab"><div class="ttname"><a href="classhoney_1_1_log_printer.html#aa34bd52769fb25a1d58a408882f11dab">honey::LogPrinter::should_stop_print_thread_</a></div><div class="ttdeci">std::atomic&lt; bool &gt; should_stop_print_thread_</div><div class="ttdef"><b>Definition</b> log_printer.h:45</div></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html_ae02945ccffb6e87b1cf28b4950b1490a"><div class="ttname"><a href="classhoney_1_1_log_printer.html#ae02945ccffb6e87b1cf28b4950b1490a">honey::LogPrinter::modules_verbosity_</a></div><div class="ttdeci">std::map&lt; string, LogVerbosity &gt; modules_verbosity_</div><div class="ttdef"><b>Definition</b> log_printer.h:37</div></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html_ae4aef78c2d7f11fc2ac52a7405db30fa"><div class="ttname"><a href="classhoney_1_1_log_printer.html#ae4aef78c2d7f11fc2ac52a7405db30fa">honey::LogPrinter::SetModuleVerbosity</a></div><div class="ttdeci">void SetModuleVerbosity(const string &amp;module_name, LogVerbosity verbosity)</div></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html_aec9ca335adb126a26006940a07efe565"><div class="ttname"><a href="classhoney_1_1_log_printer.html#aec9ca335adb126a26006940a07efe565">honey::LogPrinter::ColorConsolePrint</a></div><div class="ttdeci">void ColorConsolePrint(LogVerbosity verbosity, const string &amp;log)</div></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html_afbcb78b3504987991b49921b9ff5bac2"><div class="ttname"><a href="classhoney_1_1_log_printer.html#afbcb78b3504987991b49921b9ff5bac2">honey::LogPrinter::PrintFromQueue</a></div><div class="ttdeci">void PrintFromQueue()</div></div>
+<div class="ttc" id="aclasshoney_1_1_log_printer_html_afdcf82bbc45a3ead04fc93c1898e3009"><div class="ttname"><a href="classhoney_1_1_log_printer.html#afdcf82bbc45a3ead04fc93c1898e3009">honey::LogPrinter::HasModule</a></div><div class="ttdeci">bool HasModule(const string &amp;module_name)</div></div>
+<div class="ttc" id="alog__verbosity_8h_html"><div class="ttname"><a href="log__verbosity_8h.html">log_verbosity.h</a></div></div>
+<div class="ttc" id="anamespacehoney_html"><div class="ttname"><a href="namespacehoney.html">honey</a></div><div class="ttdef"><b>Definition</b> internationalization.h:16</div></div>
+<div class="ttc" id="anamespacehoney_html_a131b6485330f00281563807ff1f175ae"><div class="ttname"><a href="namespacehoney.html#a131b6485330f00281563807ff1f175ae">honey::LogVerbosity</a></div><div class="ttdeci">LogVerbosity</div><div class="ttdef"><b>Definition</b> log_verbosity.h:7</div></div>
+<div class="ttc" id="astructhoney_1_1_log_printer_1_1_to_print_log_html"><div class="ttname"><a href="structhoney_1_1_log_printer_1_1_to_print_log.html">honey::LogPrinter::ToPrintLog</a></div><div class="ttdef"><b>Definition</b> log_printer.h:23</div></div>
+<div class="ttc" id="astructhoney_1_1_log_printer_1_1_to_print_log_html_a633d70e002c6385e647455fc3116298e"><div class="ttname"><a href="structhoney_1_1_log_printer_1_1_to_print_log.html#a633d70e002c6385e647455fc3116298e">honey::LogPrinter::ToPrintLog::module_name</a></div><div class="ttdeci">string module_name</div><div class="ttdef"><b>Definition</b> log_printer.h:24</div></div>
+<div class="ttc" id="astructhoney_1_1_log_printer_1_1_to_print_log_html_a751e3c19589252e6153f801642d4b1ac"><div class="ttname"><a href="structhoney_1_1_log_printer_1_1_to_print_log.html#a751e3c19589252e6153f801642d4b1ac">honey::LogPrinter::ToPrintLog::verbosity</a></div><div class="ttdeci">LogVerbosity verbosity</div><div class="ttdef"><b>Definition</b> log_printer.h:26</div></div>
+<div class="ttc" id="astructhoney_1_1_log_printer_1_1_to_print_log_html_af3c58f980c41652160e1032312024bd4"><div class="ttname"><a href="structhoney_1_1_log_printer_1_1_to_print_log.html#af3c58f980c41652160e1032312024bd4">honey::LogPrinter::ToPrintLog::log</a></div><div class="ttdeci">string log</div><div class="ttdef"><b>Definition</b> log_printer.h:25</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_72acffa14d54ee0aed1160907ab211a1.html">logger</a></li><li class="navelem"><a class="el" href="log__printer_8h.html">log_printer.h</a></li>
+    <li class="footer">Generated on Wed Mar 20 2024 19:25:15 for Honey by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>
